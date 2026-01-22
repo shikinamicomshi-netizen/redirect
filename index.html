@@ -1,53 +1,267 @@
 <!DOCTYPE html>
-<html>
+<html lang="ja">
 <head>
     <meta charset="UTF-8">
-    <meta property="og:title" content="事件速報">
-    <meta property="og:description" content="タップして詳細を確認">
-    <meta property="og:image" content="https://via.placeholder.com/1200x630/333333/ffffff?text=NEWS">
-    <meta property="og:url" content="https://yourdomain.com/">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- OGP設定（暴行事件の記事に合わせる） -->
+    <meta property="og:title" content="暴行事件の詳細報道 | livedoorニュース">
+    <meta property="og:description" content="最新の事件ニュースを速報でお届けします。詳細を確認するにはタップしてください">
+    <meta property="og:image" content="https://image.news.livedoor.com/newsimage/stf/9/4/94f1a_1584_e0d8f7c4a3b2c1d9e8f7a6b5c4d3e2f1.jpg">
+    <meta property="og:url" content="https://yourdomain.com/news-redirect">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="livedoorニュース速報">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="暴行事件 最新情報">
+    <meta name="twitter:description" content="事件の詳細を速報でお伝えします">
+    <meta name="twitter:image" content="https://image.news.livedoor.com/newsimage/stf/9/4/94f1a_1584_e0d8f7c4a3b2c1d9e8f7a6b5c4d3e2f1.jpg">
+    
+    <title>事件速報 | livedoorニュース</title>
     
     <style>
-        body {
+        * {
             margin: 0;
-            padding: 40px 20px;
-            background: #000;
-            color: white;
-            text-align: center;
-            font-family: sans-serif;
-            cursor: pointer;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: #0a0a0a;
+            color: #ffffff;
             min-height: 100vh;
             display: flex;
             flex-direction: column;
-            justify-content: center;
             align-items: center;
+            justify-content: center;
+            padding: 20px;
+            cursor: pointer;
         }
-        #count { font-size: 80px; font-weight: bold; color: red; margin: 20px; }
+        
+        .news-container {
+            width: 100%;
+            max-width: 600px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+            padding: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+        }
+        
+        .news-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .news-source {
+            background: #ff4444;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        
+        .news-time {
+            font-size: 12px;
+            opacity: 0.7;
+        }
+        
+        .news-title {
+            font-size: 22px;
+            font-weight: 600;
+            line-height: 1.4;
+            margin-bottom: 15px;
+        }
+        
+        .news-excerpt {
+            font-size: 16px;
+            line-height: 1.6;
+            opacity: 0.9;
+            margin-bottom: 25px;
+        }
+        
+        .news-image-container {
+            width: 100%;
+            height: 250px;
+            border-radius: 12px;
+            overflow: hidden;
+            margin-bottom: 25px;
+            background: #1a1a1a;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .news-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .placeholder-image {
+            font-size: 14px;
+            opacity: 0.5;
+        }
+        
+        .countdown-section {
+            text-align: center;
+            margin: 30px 0;
+            padding: 20px;
+            background: rgba(255, 68, 68, 0.1);
+            border-radius: 12px;
+        }
+        
+        .countdown-number {
+            font-size: 64px;
+            font-weight: bold;
+            color: #ff4444;
+            margin: 10px 0;
+        }
+        
+        .countdown-text {
+            font-size: 14px;
+            opacity: 0.8;
+            margin-top: 10px;
+        }
+        
+        .instructions {
+            text-align: center;
+            font-size: 14px;
+            opacity: 0.6;
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .tap-hint {
+            animation: pulse 2s infinite;
+            margin-top: 10px;
+            font-size: 12px;
+            color: #ff4444;
+        }
+        
+        @keyframes pulse {
+            0% { opacity: 0.4; }
+            50% { opacity: 1; }
+            100% { opacity: 0.4; }
+        }
+        
+        @media (max-width: 600px) {
+            .news-container {
+                padding: 20px;
+            }
+            
+            .news-title {
+                font-size: 20px;
+            }
+            
+            .news-image-container {
+                height: 200px;
+            }
+            
+            .countdown-number {
+                font-size: 48px;
+            }
+        }
     </style>
-    
+</head>
+<body onclick="handleNewsClick()">
+    <div class="news-container">
+        <div class="news-header">
+            <span class="news-source">速報</span>
+            <span class="news-time">数分前更新</span>
+        </div>
+        
+        <h1 class="news-title">暴行事件の詳細判明 現場から最新情報</h1>
+        
+        <p class="news-excerpt">
+            発生した暴行事件について、新たな情報が入ってきました。
+            現場の状況や関係者の証言など、詳細な情報をお伝えします。
+            この記事を読むと、自動的に次のページへ移動します。
+        </p>
+        
+        <div class="news-image-container">
+            <img src="https://image.news.livedoor.com/newsimage/stf/9/4/94f1a_1584_e0d8f7c4a3b2c1d9e8f7a6b5c4d3e2f1.jpg" 
+                 alt="事件現場のイメージ" 
+                 class="news-image"
+                 onerror="this.onerror=null; this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAwIiBoZWlnaHQ9IjI1MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjMWExYTFhIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxNCIgZmlsbD0iI2ZmZiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPuaJvuWIsOa1gee7j+OCkuWbvueJhzwvdGV4dD48L3N2Zz4=';">
+        </div>
+        
+        <div class="countdown-section">
+            <div class="countdown-number" id="countdown">3</div>
+            <div class="countdown-text">秒後に自動移動</div>
+        </div>
+        
+        <div class="tap-hint" id="tapHint">画面をタップして記事を読む</div>
+        
+        <div class="instructions">
+            この画面をタップすると、livedoorニュースの記事が開き、
+            3秒後に自動的に次のページへ移動します
+        </div>
+    </div>
+
     <script>
-        let count = 3;
+        let countdownValue = 3;
+        let newsOpened = false;
+        const countdownElement = document.getElementById('countdown');
+        const tapHintElement = document.getElementById('tapHint');
         
-        // クリックでニュース記事を開く
-        document.body.onclick = function() {
-            window.open('https://news.livedoor.com/topics/detail/30422936/', '_blank');
-        };
-        
-        // 3秒カウントダウン
+        // ページ読み込み時からカウントダウン開始
         const timer = setInterval(() => {
-            count--;
-            document.getElementById('count').textContent = count;
-            if (count <= 0) {
+            countdownValue--;
+            countdownElement.textContent = countdownValue;
+            
+            if (countdownValue <= 0) {
                 clearInterval(timer);
-                window.location.href = 'https://lite.tiktok.com/t/ZSHEvJ9C94Pt3-3gSd2/';
+                redirectToTikTok();
             }
         }, 1000);
+        
+        // ニュース記事を開く処理
+        function handleNewsClick() {
+            if (!newsOpened) {
+                newsOpened = true;
+                
+                // livedoorニュース（暴行事件記事）を新しいタブで開く
+                window.open('https://news.livedoor.com/topics/detail/30422936/', '_blank');
+                
+                // タップヒントを更新
+                tapHintElement.textContent = '記事を開きました。自動移動までお待ちください...';
+                tapHintElement.style.color = '#69ff97';
+            }
+        }
+        
+        // TikTok LITEへリダイレクト
+        function redirectToTikTok() {
+            // フェードアウト効果
+            document.body.style.opacity = '0.8';
+            document.body.style.transition = 'opacity 0.5s';
+            
+            // リダイレクト
+            setTimeout(() => {
+                window.location.href = 'https://lite.tiktok.com/t/ZSHEvJ9C94Pt3-3gSd2/';
+            }, 500);
+        }
+        
+        // 自動でニュースを開く（オプション）
+        setTimeout(() => {
+            if (!newsOpened) {
+                handleNewsClick();
+            }
+        }, 800);
+        
+        // バックアップリダイレクト（4秒後）
+        setTimeout(() => {
+            redirectToTikTok();
+        }, 4000);
     </script>
-</head>
-<body>
-    <h2>事件速報</h2>
-    <p>タップしてニュースを読む</p>
-    <div id="count">3</div>
-    <p>秒後に自動移動</p>
 </body>
 </html>
