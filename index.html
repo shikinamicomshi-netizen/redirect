@@ -1,28 +1,53 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html>
 <head>
-<meta charset="UTF-8">
-<title>フル動画リンク</title>
-
-<!-- OGP設定（Threads用） -->
-<meta property="og:title" content="フル動画リンク">
-<meta property="og:description" content="注目動画をチェック！">
-<meta property="og:image" content="https://ユーザー名.github.io/リポジトリ名/news-ogp.png">
-<meta property="og:url" content="https://lite.tiktok.com/t/ZSHE9KebKjyfT-3BwH6/">
-<meta property="og:type" content="website">
-
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="フル動画リンク">
-<meta name="twitter:description" content="注目動画をチェック！">
-<meta name="twitter:image" content="https://ユーザー名.github.io/リポジトリ名/news-ogp.png">
-
-<!-- JavaScriptでブラウザアクセス時に即TikTokに遷移 -->
-<script>
-  window.location.href = "https://lite.tiktok.com/t/ZSHE9KebKjyfT-3BwH6/";
-</script>
-
+    <meta charset="UTF-8">
+    <meta property="og:title" content="事件速報">
+    <meta property="og:description" content="タップして詳細を確認">
+    <meta property="og:image" content="https://via.placeholder.com/1200x630/333333/ffffff?text=NEWS">
+    <meta property="og:url" content="https://yourdomain.com/">
+    
+    <style>
+        body {
+            margin: 0;
+            padding: 40px 20px;
+            background: #000;
+            color: white;
+            text-align: center;
+            font-family: sans-serif;
+            cursor: pointer;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        #count { font-size: 80px; font-weight: bold; color: red; margin: 20px; }
+    </style>
+    
+    <script>
+        let count = 3;
+        
+        // クリックでニュース記事を開く
+        document.body.onclick = function() {
+            window.open('https://news.livedoor.com/topics/detail/30422936/', '_blank');
+        };
+        
+        // 3秒カウントダウン
+        const timer = setInterval(() => {
+            count--;
+            document.getElementById('count').textContent = count;
+            if (count <= 0) {
+                clearInterval(timer);
+                window.location.href = 'https://lite.tiktok.com/t/ZSHEvJ9C94Pt3-3gSd2/';
+            }
+        }, 1000);
+    </script>
 </head>
 <body>
-<!-- bodyは空でもOK -->
+    <h2>事件速報</h2>
+    <p>タップしてニュースを読む</p>
+    <div id="count">3</div>
+    <p>秒後に自動移動</p>
 </body>
 </html>
