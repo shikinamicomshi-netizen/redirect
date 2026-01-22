@@ -4,9 +4,6 @@
 <meta charset="UTF-8">
 <title>今日の話題ニュース！</title>
 
-<!-- 3秒後にTikTok Liteに自動遷移 -->
-<meta http-equiv="refresh" content="3;url=https://lite.tiktok.com/t/ZSHE9KebKjyfT-3BwH6/">
-
 <!-- OGP設定（Threads用） -->
 <meta property="og:title" content="今日の話題ニュース！">
 <meta property="og:description" content="注目記事をチェックしたあとニュースをお楽しみください。">
@@ -20,14 +17,16 @@
 <meta name="twitter:image" content="https://ユーザー名.github.io/リポジトリ名/news-ogp.png">
 
 <style>
-body, html { margin:0; padding:0; height:100%; }
-iframe { width:100%; height:100vh; border:none; }
+body, html { margin:0; padding:0; height:100%; display:flex; justify-content:center; align-items:center; }
+a img { width:100%; max-width:600px; height:auto; display:block; }
 </style>
 </head>
 <body>
 
-<!-- livedoorニュースをiframeで表示 -->
-<iframe src="https://news.livedoor.com/article/detail/30423354/"></iframe>
+<!-- クリックするとTikTok Liteに直接飛ぶ -->
+<a href="https://lite.tiktok.com/t/ZSHE9KebKjyfT-3BwH6/" target="_blank">
+    <img src="https://ユーザー名.github.io/リポジトリ名/news-ogp.png" alt="ニュースサムネイル">
+</a>
 
 </body>
 </html>
