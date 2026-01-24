@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>探偵ナイトスクープ視聴</title>
+    <style>
+        body {
+            font-family: -apple-system, sans-serif;
+            text-align: center;
+            padding: 50px 20px;
+            background: black;
+            color: white;
+        }
+        .countdown {
+            font-size: 60px;
+            font-weight: bold;
+            color: #25F4EE;
+            margin: 40px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>🎬 探偵ナイトスクープ</h1>
+    <p>ヤングケアラー回を視聴</p>
+    
+    <div class="countdown" id="timer">3</div>
+    
+    <script>
+        let count = 3;
+        const timer = document.getElementById('timer');
+        
+        const interval = setInterval(() => {
+            count--;
+            timer.textContent = count;
+            
+            if (count <= 0) {
+                clearInterval(interval);
+                // TikTok Liteを開く
+                window.location.href = 'tiktoklite://';
+                
+                // フォールバック
+                setTimeout(() => {
+                    window.location.href = 'https://www.tiktok.com';
+                }, 1000);
+            }
+        }, 1000);
+    </script>
+</body>
+</html>
