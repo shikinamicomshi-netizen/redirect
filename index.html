@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎬 探偵ナイトスクープ視聴ページ</title>
+    <style>
+        body {
+            font-family: -apple-system, sans-serif;
+            text-align: center;
+            padding: 40px 20px;
+            background: #000;
+            color: white;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            background: rgba(255,255,255,0.05);
+            border-radius: 25px;
+            padding: 40px 30px;
+            border: 2px solid #25F4EE;
+        }
+        .countdown {
+            font-size: 60px;
+            font-weight: bold;
+            color: #FF0050;
+            margin: 30px 0;
+            font-family: monospace;
+        }
+        .play-btn {
+            background: linear-gradient(45deg, #FF0050, #25F4EE);
+            color: white;
+            border: none;
+            padding: 20px 40px;
+            border-radius: 30px;
+            font-size: 22px;
+            font-weight: bold;
+            cursor: pointer;
+            width: 100%;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎬 探偵ナイトスクープ</h1>
+        <p>ヤングケアラー回を視聴</p>
+        
+        <div class="countdown" id="countdown">3</div>
+        
+        <button class="play-btn" onclick="openVideo()">
+            ▶ 動画を見る
+        </button>
+        
+        <p style="color: #888; margin-top: 30px;">
+            TikTok Liteで最適再生
+        </p>
+    </div>
+    
+    <script>
+        // カウントダウン処理
+        let count = 3;
+        const countdownElement = document.getElementById('countdown');
+        
+        const countdownInterval = setInterval(() => {
+            count--;
+            countdownElement.textContent = count;
+            
+            if (count <= 0) {
+                clearInterval(countdownInterval);
+                openVideo();
+            }
+        }, 1000);
+        
+        function openVideo() {
+            window.location.href = 'tiktoklite://';
+            setTimeout(() => {
+                window.location.href = 'https://www.tiktok.com';
+            }, 2000);
+        }
+    </script>
+</body>
+</html>
