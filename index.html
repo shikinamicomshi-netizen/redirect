@@ -3,270 +3,385 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- OGP設定（暴行事件の記事に合わせる） -->
-    <meta property="og:title" content="暴行事件の詳細報道 | livedoorニュース">
-    <meta property="og:description" content="最新の事件ニュースを速報でお届けします。詳細を確認するにはタップしてください">
-    <meta property="og:image" content="https://image.news.livedoor.com/newsimage/stf/9/4/94f1a_1584_e0d8f7c4a3b2c1d9e8f7a6b5c4d3e2f1.jpg">
-    <meta property="og:url" content="https://yourdomain.com/news-redirect">
-    <meta property="og:type" content="article">
-    <meta property="og:site_name" content="livedoorニュース速報">
-    
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="暴行事件 最新情報">
-    <meta name="twitter:description" content="事件の詳細を速報でお伝えします">
-    <meta name="twitter:image" content="https://image.news.livedoor.com/newsimage/stf/9/4/94f1a_1584_e0d8f7c4a3b2c1d9e8f7a6b5c4d3e2f1.jpg">
-    
-    <title>事件速報 | livedoorニュース</title>
-    
+    <title>【フル動画】探偵ナイトスクープ ヤングケアラー回 | TikTok Liteで視聴</title>
+    <meta name="description" content="話題の探偵ナイトスクープ・ヤングケアラー回のフル動画をTikTok Liteで視聴">
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-    
         }
-        <meta property="og:image" content="https://raw.githubusercontent.com/shikinamicomshi-netizen/redir/main/IMG_1202.png">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
         
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-            background: #0a0a0a;
-            color: #ffffff;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
-            cursor: pointer;
-        }
-        
-        .news-container {
-            width: 100%;
-            max-width: 600px;
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 16px;
-            padding: 30px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-        }
-        
-        .news-header {
-            display: flex;
-            align-items: center;
-            margin-bottom: 20px;
-            padding-bottom: 15px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        
-        .news-source {
-            background: #ff4444;
+            background: #000;
             color: white;
-            padding: 4px 12px;
-            border-radius: 20px;
-            font-size: 12px;
-            font-weight: bold;
-            margin-right: 10px;
-        }
-        
-        .news-time {
-            font-size: 12px;
-            opacity: 0.7;
-        }
-        
-        .news-title {
-            font-size: 22px;
-            font-weight: 600;
-            line-height: 1.4;
-            margin-bottom: 15px;
-        }
-        
-        .news-excerpt {
-            font-size: 16px;
             line-height: 1.6;
-            opacity: 0.9;
-            margin-bottom: 25px;
         }
         
-        .news-image-container {
+        .container {
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .header {
+            text-align: center;
+            padding: 30px 20px;
+            background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.5)), 
+                        url('https://images.unsplash.com/photo-1598899134739-24c46f58b8c0?auto=format&fit=crop&w=800');
+            background-size: cover;
+            border-radius: 0 0 30px 30px;
+            margin-bottom: 30px;
+        }
+        
+        .title {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+        }
+        
+        .subtitle {
+            font-size: 16px;
+            opacity: 0.9;
+            margin-bottom: 20px;
+        }
+        
+        .badge {
+            display: inline-block;
+            background: #FF0050;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+        
+        .video-preview {
+            background: #1a1a1a;
+            border-radius: 20px;
+            overflow: hidden;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+        
+        .thumbnail {
             width: 100%;
             height: 250px;
-            border-radius: 12px;
-            overflow: hidden;
-            margin-bottom: 25px;
-            background: #1a1a1a;
+            background: linear-gradient(45deg, #FF0050, #00F2EA);
+            position: relative;
             display: flex;
             align-items: center;
             justify-content: center;
-            border: 2px solid rgba(255, 255, 255, 0.1);
+            font-size: 60px;
         }
         
-        .news-image {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
+        .play-overlay {
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            color: #FF0050;
+            cursor: pointer;
+            transition: transform 0.3s;
         }
         
-        .placeholder-image {
-            font-size: 14px;
-            opacity: 0.5;
+        .play-overlay:hover {
+            transform: scale(1.1);
         }
         
-        .countdown-section {
-            text-align: center;
-            margin: 30px 0;
-            padding: 20px;
-            background: rgba(255, 68, 68, 0.1);
-            border-radius: 12px;
+        .video-info {
+            padding: 25px;
         }
         
-        .countdown-number {
-            font-size: 64px;
+        .video-title {
+            font-size: 20px;
             font-weight: bold;
-            color: #ff4444;
-            margin: 10px 0;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
         
-        .countdown-text {
+        .video-meta {
+            display: flex;
+            gap: 20px;
+            color: #aaa;
             font-size: 14px;
-            opacity: 0.8;
-            margin-top: 10px;
+            margin-bottom: 20px;
         }
         
-        .instructions {
+        .description {
+            color: #ccc;
+            font-size: 16px;
+            margin-bottom: 25px;
+        }
+        
+        .highlight {
+            background: rgba(255, 0, 80, 0.1);
+            border-left: 4px solid #FF0050;
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 0 10px 10px 0;
+        }
+        
+        .redirect-section {
             text-align: center;
+            padding: 40px 30px;
+            background: rgba(37, 244, 238, 0.05);
+            border-radius: 20px;
+            margin: 40px 0;
+            border: 2px solid rgba(37, 244, 238, 0.2);
+        }
+        
+        .redirect-message {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: #25F4EE;
+        }
+        
+        .countdown {
+            font-size: 48px;
+            font-weight: bold;
+            color: #25F4EE;
+            margin: 30px 0;
+            font-family: monospace;
+        }
+        
+        .loading-bar {
+            width: 100%;
+            height: 6px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 3px;
+            margin: 30px 0;
+            overflow: hidden;
+        }
+        
+        .loading-fill {
+            height: 100%;
+            width: 0%;
+            background: linear-gradient(90deg, #25F4EE, #FF0050);
+            border-radius: 3px;
+            animation: loading 3s linear forwards;
+        }
+        
+        @keyframes loading {
+            to { width: 100%; }
+        }
+        
+        .manual-button {
+            background: linear-gradient(45deg, #25F4EE, #FF0050);
+            color: white;
+            border: none;
+            padding: 22px 40px;
+            border-radius: 30px;
+            font-size: 22px;
+            font-weight: bold;
+            cursor: pointer;
+            width: 100%;
+            max-width: 400px;
+            margin: 20px 0;
+            transition: transform 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            box-shadow: 0 10px 25px rgba(37, 244, 238, 0.3);
+        }
+        
+        .manual-button:active {
+            transform: scale(0.98);
+        }
+        
+        .tiktok-logo {
+            font-size: 28px;
+        }
+        
+        .features {
+            display: grid;
+            gap: 20px;
+            margin: 40px 0;
+        }
+        
+        .feature {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+        }
+        
+        .feature-icon {
+            font-size: 24px;
+            color: #25F4EE;
+        }
+        
+        .footer {
+            text-align: center;
+            padding: 30px 20px;
+            color: #666;
             font-size: 14px;
-            opacity: 0.6;
-            margin-top: 20px;
-            padding-top: 20px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            border-top: 1px solid #333;
+            margin-top: 40px;
         }
         
-        .tap-hint {
-            animation: pulse 2s infinite;
-            margin-top: 10px;
+        .disclaimer {
             font-size: 12px;
-            color: #ff4444;
-        }
-        
-        @keyframes pulse {
-            0% { opacity: 0.4; }
-            50% { opacity: 1; }
-            100% { opacity: 0.4; }
-        }
-        
-        @media (max-width: 600px) {
-            .news-container {
-                padding: 20px;
-            }
-            
-            .news-title {
-                font-size: 20px;
-            }
-            
-            .news-image-container {
-                height: 200px;
-            }
-            
-            .countdown-number {
-                font-size: 48px;
-            }
+            color: #888;
+            margin-top: 20px;
         }
     </style>
 </head>
-<body onclick="handleNewsClick()">
-    <div class="news-container">
-        <div class="news-header">
-            <span class="news-source">速報</span>
-            <span class="news-time">数分前更新</span>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="badge">🎬 フル動画視聴</div>
+            <h1 class="title">探偵ナイトスクープ</h1>
+            <div class="subtitle">ヤングケアラー回・完全版</div>
         </div>
         
-        <h1 class="news-title">暴行事件の詳細判明 現場から最新情報</h1>
-        
-        <p class="news-excerpt">
-            発生した暴行事件について、新たな情報が入ってきました。
-            現場の状況や関係者の証言など、詳細な情報をお伝えします。
-            この記事を読むと、自動的に次のページへ移動します。
-        </p>
-        
-        <div class="news-image-container">
-            <img src="https://image.news.livedoor.com/newsimage/stf/9/4/94f1a_1584_e0d8f7c4a3b2c1d9e8f7a6b5c4d3e2f1.jpg" 
-                 alt="事件現場のイメージ" 
-                 class="news-image"
-                 onerror="this.onerror=null; this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAwIiBoZWlnaHQ9IjI1MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjMWExYTFhIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxNCIgZmlsbD0iI2ZmZiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPuaJvuWIsOa1gee7j+OCkuWbvueJhzwvdGV4dD48L3N2Zz4=';">
+        <div class="video-preview">
+            <div class="thumbnail">
+                <div class="play-overlay">▶</div>
+            </div>
+            <div class="video-info">
+                <div class="video-title">
+                    <span>【感動の実話】</span>
+                </div>
+                <div class="video-meta">
+                    <span>📅 放送日: 2024年1月</span>
+                    <span>⏱️ 45分</span>
+                    <span>👍 高評価</span>
+                </div>
+                <div class="description">
+                    <p>ヤングケアラー高校生の切実な依頼に、番組初の涙が…</p>
+                    <p>視聴者から「今年一番の回」との声が続出。</p>
+                </div>
+                
+                <div class="highlight">
+                    <strong>Threadsで話題沸騰中</strong><br>
+                    関西テレビ公式アカウントでも特集されるほどの反響
+                </div>
+            </div>
         </div>
         
-        <div class="countdown-section">
-            <div class="countdown-number" id="countdown">3</div>
-            <div class="countdown-text">秒後に自動移動</div>
+        <div class="features">
+            <div class="feature">
+                <div class="feature-icon">🎯</div>
+                <div>
+                    <strong>完全版視聴可能</strong><br>
+                    テレビ放送のフルバージョンを視聴
+                </div>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">⚡</div>
+                <div>
+                    <strong>軽快な再生</strong><br>
+                    軽量アプリでサクサク視聴
+                </div>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">📱</div>
+                <div>
+                    <strong>スマホ最適化</strong><br>
+                    モバイルで見やすいインターフェース
+                </div>
+            </div>
         </div>
         
-        <div class="tap-hint" id="tapHint">画面をタップして記事を読む</div>
+        <div class="redirect-section">
+            <div class="redirect-message">
+                TikTok Liteで動画を視聴します
+            </div>
+            
+            <div class="countdown" id="countdown">3</div>
+            
+            <div class="loading-bar">
+                <div class="loading-fill"></div>
+            </div>
+            
+            <p>アプリを起動しています...</p>
+            
+            <button class="manual-button" onclick="openTikTokLite()">
+                <span class="tiktok-logo">▶</span>
+                今すぐ視聴する
+            </button>
+        </div>
         
-        <div class="instructions">
-            この画面をタップすると、livedoorニュースの記事が開き、
-            3秒後に自動的に次のページへ移動します
+        <div class="footer">
+            <p>このページはTikTok Liteアプリでの動画視聴へ自動的に接続します</p>
+            <div class="disclaimer">
+                ※ 動画コンテンツの権利は各放送局に帰属します
+            </div>
         </div>
     </div>
 
     <script>
-        let countdownValue = 3;
-        let newsOpened = false;
+        // カウントダウン処理
+        let count = 3;
         const countdownElement = document.getElementById('countdown');
-        const tapHintElement = document.getElementById('tapHint');
         
-        // ページ読み込み時からカウントダウン開始
-        const timer = setInterval(() => {
-            countdownValue--;
-            countdownElement.textContent = countdownValue;
+        const countdownInterval = setInterval(() => {
+            count--;
+            countdownElement.textContent = count;
             
-            if (countdownValue <= 0) {
-                clearInterval(timer);
-                redirectToTikTok();
+            if (count <= 0) {
+                clearInterval(countdownInterval);
+                openTikTokLite();
             }
         }, 1000);
         
-        // ニュース記事を開く処理
-        function handleNewsClick() {
-            if (!newsOpened) {
-                newsOpened = true;
-                
-                // livedoorニュース（暴行事件記事）を新しいタブで開く
-                window.open('https://news.livedoor.com/topics/detail/30422936/', '_blank');
-                
-                // タップヒントを更新
-                tapHintElement.textContent = '記事を開きました。自動移動までお待ちください...';
-                tapHintElement.style.color = '#69ff97';
-            }
-        }
-        
-        // TikTok LITEへリダイレクト
-        function redirectToTikTok() {
-            // フェードアウト効果
-            document.body.style.opacity = '0.8';
-            document.body.style.transition = 'opacity 0.5s';
+        // TikTok Liteを開く関数
+        function openTikTokLite() {
+            clearInterval(countdownInterval);
+            countdownElement.textContent = "▶";
             
-            // リダイレクト
+            // 視聴ページを開く（招待ではなく動画視聴ページを想定）
+            // TikTok Liteのディープリンクを使用
+            window.location.href = 'tiktoklite://video/night-scoop-full';
+            
+            // フォールバック：3秒後にTikTok Liteのトップページへ
             setTimeout(() => {
-                window.location.href = 'https://lite.tiktok.com/t/ZSHEvJ9C94Pt3-3gSd2/';
-            }, 500);
+                if (!document.hidden) {
+                    window.location.href = 'tiktoklite://';
+                    
+                    // さらにフォールバック：TikTok Liteダウンロードページ
+                    setTimeout(() => {
+                        if (!document.hidden) {
+                            window.location.href = 'https://apps.apple.com/jp/app/tiktok-lite/id1477032403';
+                        }
+                    }, 1000);
+                }
+            }, 300);
         }
         
-        // 自動でニュースを開く（オプション）
-        setTimeout(() => {
-            if (!newsOpened) {
-                handleNewsClick();
-            }
-        }, 800);
+        // プレイボタンも同じ機能
+        document.querySelector('.play-overlay').addEventListener('click', openTikTokLite);
         
-        // バックアップリダイレクト（4秒後）
+        // ページがバックグラウンドに行ったら成功
+        document.addEventListener('visibilitychange', function() {
+            if (document.hidden) {
+                console.log('TikTok Lite起動成功');
+            }
+        });
+        
+        // 10秒経っても動かなければボタンにフォーカス
         setTimeout(() => {
-            redirectToTikTok();
-        }, 4000);
+            if (!document.hidden) {
+                document.querySelector('.manual-button').style.background = 
+                    'linear-gradient(45deg, #FF0050, #FE2C55)';
+                document.querySelector('.manual-button').innerHTML = 
+                    '<span class="tiktok-logo">⚠️</span> こちらをタップして視聴';
+            }
+        }, 10000);
     </script>
 </body>
 </html>
-
