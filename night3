@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>リンクテスト</title>
+</head>
+<body>
+    <h1>リンクテスト</h1>
+    
+    <button onclick="testLink('https://www.tiktok.com/lite/invite/ZSHovTGXACKeR-94XGE')">
+        テスト1: TikTok Lite招待リンク
+    </button>
+    <br><br>
+    
+    <button onclick="testLink('https://lite.tiktok.com/t/ZSHovTGXACKeR-94XGE/')">
+        テスト2: lite.tiktok.comリンク
+    </button>
+    <br><br>
+    
+    <button onclick="testLink('tiktoklite://')">
+        テスト3: アプリ直接起動
+    </button>
+    <br><br>
+    
+    <div id="result" style="margin-top: 30px; padding: 20px; background: #f0f0f0;"></div>
+    
+    <script>
+        function testLink(url) {
+            document.getElementById('result').innerHTML = 
+                `試行中: ${url}<br>`;
+            
+            window.location.href = url;
+            
+            setTimeout(() => {
+                if (!document.hidden) {
+                    document.getElementById('result').innerHTML += 
+                        `❌ 失敗: ページが開きませんでした`;
+                } else {
+                    document.getElementById('result').innerHTML += 
+                        `✅ 成功: アプリが起動した可能性あり`;
+                }
+            }, 2000);
+        }
+    </script>
+</body>
+</html>
