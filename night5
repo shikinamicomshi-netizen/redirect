@@ -29,7 +29,7 @@
         let count = 3;
         const timer = document.getElementById('timer');
         
-        const interval = setInterval(() => {
+         const interval = setInterval(() => {
             count--;
             timer.textContent = count;
             
